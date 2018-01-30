@@ -65,6 +65,7 @@ class PostModel(models.Model):
     author_email    = models.EmailField(max_length=240, null=True, blank=True)
     updated         = models.DateTimeField(auto_now=True)
     timestamp       = models.DateTimeField(auto_now_add=True)
+    image           = models.FileField(blank =True , null = True, upload_to = 'blog')
 
     objects = PostModelManager()
     other = PostModelManager()
