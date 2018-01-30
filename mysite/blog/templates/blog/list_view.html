@@ -217,9 +217,8 @@
     </div>
 
     <!-- link this footer file on every page  -->
-
-    <footer style="background-color:#151515;">
-      <div class="container mb-3 ">
+    <footer id="footer">
+      <div class="container mb-3 footer-0">
         <div class="row mt-3">
           <div class="col-md-3 col-xs-3 mt-4">
             <a href="index.html"><img src="img/edc-white.png" height="40px" width="120px"  ></a><br><br>
@@ -237,7 +236,7 @@
 
           </div>
 
-          <div class="col-md-3 col-xs-3 mt-3 hello">
+          <div class="col-md-3 col-xs-3 mt-3 hello" id="footer-2">
             <h4 style="color: white">Events</h4><br>
             <a href="" style="color:white; font-family:Poppins;">Startup Conclave</a><br>
             <a href="" style="color:white; font-family:Poppins;">SEC 17</a><br>
@@ -245,74 +244,141 @@
             <a href="" style="color:white; font-family:Poppins;">Internstellar</a><br>
           </div>
 
-          <div class="col-md-3 col-xs-3 mt-3 hello">
+          <div class="col-md-3 col-xs-3 mt-3 hello" id="footer-3">
             <h4 style="color: white">Social</h4><br>
             <ul class="nav justify-content-start">
-              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-facebook"></i></a></li>
-              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-google-plus"></i></a></li>
-              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-instagram"></i></a></li>
-              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-twitter"></i></a></li>
-              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-pinterest-p "></i></a></li>
+              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-facebook fa-lg"></i></a></li>
+              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-google-plus fa-lg"></i></a></li>
+              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-instagram fa-lg"></i></a></li>
+              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-twitter fa-lg"></i></a></li>
+              <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-pinterest-p fa-lg"></i></a></li>
             </ul>
           </div>
         </div>
       </div>
-  </div>
-
-
-
-
-
-  <!-- footer -->
-  <footer id="footer">
-    <div class="container mb-3 footer-0">
-      <div class="row mt-3">
-        <div class="col-md-3 col-xs-3 mt-4">
-          <a href="index.html"><img src="img/edc-white.png" height="40px" width="120px"  ></a><br><br>
-          <p style="color:white;"> Bhararti Vidyapeeth University,<br> College of Engineering,<br> Pune-411043.
+      </div>
+      </div>
+      <div class="container-fluid mt-2 " id="footer-1">
+        <div class="row">
+          <p class="text-center container" style="color: white;">
+            Entrepreneurship Development Cell <br> Bharati Vidyapeeth University College of Engineering, Pune (INDIA)
           </p>
         </div>
-
-        <div class="col-md-3 col-xs-3 mt-3 hello">
-
-          <h4 style="color: white">Main</h4><br>
-          <a href="index.html" style="color:white;">Home</a><br>
-          <a href="about-us.html" style="color:white;">About Us</a><br>
-          <a href="contactus.php" style="color:white;">Contact Us</a><br>
-          <a href="initiatives.html" style="color:white;">Initiatives</a><br>
-
-        </div>
-
-        <div class="col-md-3 col-xs-3 mt-3 hello" id="footer-2">
-          <h4 style="color: white">Events</h4><br>
-          <a href="" style="color:white; font-family:Poppins;">Startup Conclave</a><br>
-          <a href="" style="color:white; font-family:Poppins;">SEC 17</a><br>
-          <a href="" style="color:white; font-family:Poppins;">E-Summit</a><br>
-          <a href="" style="color:white; font-family:Poppins;">Internstellar</a><br>
-        </div>
-
-        <div class="col-md-3 col-xs-3 mt-3 hello" id="footer-3">
-          <h4 style="color: white">Social</h4><br>
-          <ul class="nav justify-content-start">
-            <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-facebook fa-lg"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-google-plus fa-lg"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-instagram fa-lg"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-twitter fa-lg"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link pr-0"><i class="fa fa-pinterest-p fa-lg"></i></a></li>
-          </ul>
-        </div>
       </div>
-    </div>
-    </div>
-    </div>
-    <div class="container-fluid mt-2 " id="footer-1">
-      <div class="row">
-        <p class="text-center container" style="color: white;">
-          Entrepreneurship Development Cell <br> Bharati Vidyapeeth University College of Engineering, Pune (INDIA)
-        </p>
-      </div>
-    </div>
-  </footer>
+    </footer>
+    <!-- starting the script for the scrolling page -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+      window.sr = ScrollReveal();
+      // ScrollReveal for the navigation bar
+      // animation for the whole navigation bar
+      sr.reveal('.navbar', {
+        duration: 1000,
+        origin: 'bottom',
+        mobile: true,
+        reset: true,
+        viewFactor: 0.2
+        // easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+      });
+      // animating the component of the navigation bar each at a time using some delay
+      // animation for the home button
+      sr.reveal('.home-nav', {
+        duration: 700,
+        delay: 00,
+        distance: '300px',
+        origin: 'right',
+        reset: true,
+        mobile: true,
+        reset: true,
+        viewFactor: 0.2
+      });
+      // animation for the about us button
+      sr.reveal('.aboutus-anim', {
+        duration: 1500,
+        delay: 50,
+        distance: '300px',
+        origin: 'right',
+        mobile: true,
+        reset: true,
+        viewFactor: 0.2
+      });
+      //for the initiatives tab
+      sr.reveal('.init-anim', {
+        duration: 1500,
+        delay: 100,
+        distance: '300px',
+        origin: 'right',
+        mobile: true,
+        reset: true,
+        viewFactor: 0.2
+      });
+      //Events tab
+      sr.reveal('.events-anim', {
+        duration: 1500,
+        delay: 150,
+        distance: '300px',
+        origin: 'right',
+        mobile: true,
+        reset: true,
+        viewFactor: 0.2
+      });
+      //Contacts tab
+      sr.reveal('.con-anim', {
+        duration: 1500,
+        delay: 200,
+        distance: '300px',
+        origin: 'right',
+        mobile: true,
+        reset: true,
+        viewFactor: 0.2
+      });
+      // animation for the SLIDER
+      sr.reveal('.slide-anim', {
+        duration: 3000,
+        origin: 'bottom',
+        reset: true
+      });
+      //animation for principal's Message and the founders meassage
+      sr.reveal('.pm-anim', {
+        duration: 1000,
+        origin: 'right',
+        distance: '300px',
+        viewFactor: 0.2,
+        reset: true
+      });
+      sr.reveal('.pimg-anim', {
+        duration: 1000,
+        origin: 'left',
+        distance: '300px',
+        reset: true
+      });
+      // putting the same animation to the same heading
+      sr.reveal('.head-anim', {
+        duration: 1000,
+        origin: 'bottom',
+        reset: true,
+        mobile: true,
+        reset: true,
+        viewFactor: 0.2
+      });
+
+      sr.reveal('.showcase-btn', {
+        duration: 1500,
+        delay: 250,
+        origin: 'bottom',
+        reset: true,
+        mobile: true,
+        viewFactor: 0.2
+      });
+      sr.reveal('.quote', {
+        duration: 2000,
+        delay: 500,
+        origin: 'bottom',
+        reset: true
+      });
+    </script>
 </body>
-
 </html>
