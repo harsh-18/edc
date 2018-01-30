@@ -20,7 +20,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('blog.urls'))
+    url(r'^blog/', include('blog.urls')),
+    url(r'^$/', include('index.urls')),
+    # url(r'^contact_us/', include('contact_us.urls')),
+    url(r'^events/', include('events.urls')),
+    url(r'^initiatives/', include('initiatives.urls'))
+
 ]
 
 if settings.DEBUG:
