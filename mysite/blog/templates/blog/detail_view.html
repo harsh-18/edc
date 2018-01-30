@@ -149,72 +149,17 @@
   </nav>
   <!-- end of header -->
 
-  <h4 align="center" class="display-1">BLOGS</h4>
+<div class="container mt-4 mp-4">
+<div class="card mb-3">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h2 class="card-title text-center">{{object.title}}</h2>
+    <p class="card-text">{{object.content}}</p>
+    <p class="card-text"><small class="text-muted">Date Published : <em>{{object.publish_date}}</em></small></p>
+  </div>
+</div>
+</div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <h5 id="font1">TOP POSTS</h5>
-        <hr/>
-        {% for object in object_list %}
-        <ul class="list-unstyled">
-          <li class="media">
-            <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 mb-1"><a href="/blog/{{object.id}}">{{object.title}}</a></h5>
-              <h6>{{object.content}}</h6>
-            </div>
-          </li>
-        </ul>
-        {% endfor %}
-
-      </div>
-      <div class="col-md-4">
-
-        <!-- RECENT POST -->
-
-
-        <h5 id="font1" class="ml-5">RECENT POST</h5>
-        <hr/>
-        <ul class="list-unstyled ml-5">
-          <li class="media">
-            <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 mb-1">List-based media object</h5> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-              in faucibus.
-            </div>
-          </li>
-          <li class="media my-4">
-            <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 mb-1">List-based media object</h5> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-              in faucibus.
-            </div>
-          </li>
-          <li class="media my-4">
-            <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 mb-1">List-based media object</h5> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-              in faucibus.
-            </div>
-          </li>
-          <li class="media my-4">
-            <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 mb-1">List-based media object</h5> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-              in faucibus.
-            </div>
-          </li>
-          <li class="media my-4">
-            <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 mb-1">List-based media object</h5> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-              in faucibus.
-            </div>
-          </li>
-          <button class="btn btn-info" type="button" name="See More">See More</button>
-      </div>
-    </div>
 
     <!-- link this footer file on every page  -->
     <footer id="footer">
