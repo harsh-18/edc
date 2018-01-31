@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def associates(request):
-    template="associates.html"
+    template="associates/associates.html"
     context = {
 
     }

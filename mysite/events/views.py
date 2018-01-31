@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def events(request):
-    template="events.html"
+    template="events/events.html"
     context = {
 
     }

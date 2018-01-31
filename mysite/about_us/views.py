@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def about_us(request):
-    template="about-us.html"
+    template="about_us/about-us.html"
     context = {
 
     }

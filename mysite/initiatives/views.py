@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def initiatives(request):
-    template="initiatives.html"
+    template="initiatives/initiatives.html"
     context = {
 
     }

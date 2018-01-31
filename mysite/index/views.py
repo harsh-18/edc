@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    template="index.html"
+    template="index/index.html"
     context = {
 
     }
