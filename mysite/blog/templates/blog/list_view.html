@@ -1,6 +1,7 @@
 {% load staticfiles%}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -154,25 +155,42 @@
     <div class="row">
       <div class="col-lg-8">
         <h5 id="font1">TOP POSTS</h5>
-        <hr/>
-        {% for object in object_list %}
+        <hr/> {% for object in object_list %}
         <ul class="list-unstyled">
           <li class="media">
             <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
             <div class="media-body">
               <h5 class="mt-0 mb-1"><a href="/blog/{{object.id}}">{{object.title}}</a></h5>
-              <h6>{{object.content}}</h6>
+              <h6>{{ object.content|safe|truncatewords:"50"|linebreaks }}</h6>
+              <button class="btn" type="button" name="Read More"><a href="{{ url_for_full_content }}">Read more</a></button>
             </div>
           </li>
         </ul>
         {% endfor %}
 
+
+        {% if qs.has_other_pages %}
+        <ul class="pagination">
+          {% if qs.has_previous %}
+          <li><a href="?page={{ qs.previous_page_number }}">&laquo;</a></li>
+          {% else %}
+          <li class="disabled"><span>&laquo;</span></li>
+          {% endif %} {% for i in qs.paginator.page_range %} {% if qs.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span>
+          </li>
+          {% else %}
+          <li><a href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %} {% endfor %} {% if qs.has_next %}
+          <li><a href="?page={{ qs.next_page_number }}">&raquo;</a></li>
+          {% else %}
+          <li class="disabled"><span>&raquo;</span></li>
+          {% endif %}
+        </ul>
+        {% endif %}
+
       </div>
       <div class="col-md-4">
-
         <!-- RECENT POST -->
-
-
         <h5 id="font1" class="ml-5">RECENT POST</h5>
         <hr/>
 
@@ -229,129 +247,129 @@
           </div>
         </div>
       </div>
-      </div>
-      </div>
-      <div class="container-fluid mt-2 " id="footer-1">
-        <div class="row">
-          <p class="text-center container" style="color: white;">
-            Entrepreneurship Development Cell <br> Bharati Vidyapeeth University College of Engineering, Pune (INDIA)
-          </p>
-        </div>
-      </div>
-    </footer>
-    <!-- starting the script for the scrolling page -->
+  </div>
+  </div>
+  <div class="container-fluid mt-2 " id="footer-1">
+    <div class="row">
+      <p class="text-center container" style="color: white;">
+        Entrepreneurship Development Cell <br> Bharati Vidyapeeth University College of Engineering, Pune (INDIA)
+      </p>
+    </div>
+  </div>
+  </footer>
+  <!-- starting the script for the scrolling page -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script>
-      window.sr = ScrollReveal();
-      // ScrollReveal for the navigation bar
-      // animation for the whole navigation bar
-      sr.reveal('.navbar', {
-        duration: 1000,
-        origin: 'bottom',
-        mobile: true,
-        reset: true,
-        viewFactor: 0.2
-        // easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-      });
-      // animating the component of the navigation bar each at a time using some delay
-      // animation for the home button
-      sr.reveal('.home-nav', {
-        duration: 700,
-        delay: 00,
-        distance: '300px',
-        origin: 'right',
-        reset: true,
-        mobile: true,
-        reset: true,
-        viewFactor: 0.2
-      });
-      // animation for the about us button
-      sr.reveal('.aboutus-anim', {
-        duration: 1500,
-        delay: 50,
-        distance: '300px',
-        origin: 'right',
-        mobile: true,
-        reset: true,
-        viewFactor: 0.2
-      });
-      //for the initiatives tab
-      sr.reveal('.init-anim', {
-        duration: 1500,
-        delay: 100,
-        distance: '300px',
-        origin: 'right',
-        mobile: true,
-        reset: true,
-        viewFactor: 0.2
-      });
-      //Events tab
-      sr.reveal('.events-anim', {
-        duration: 1500,
-        delay: 150,
-        distance: '300px',
-        origin: 'right',
-        mobile: true,
-        reset: true,
-        viewFactor: 0.2
-      });
-      //Contacts tab
-      sr.reveal('.con-anim', {
-        duration: 1500,
-        delay: 200,
-        distance: '300px',
-        origin: 'right',
-        mobile: true,
-        reset: true,
-        viewFactor: 0.2
-      });
-      // animation for the SLIDER
-      sr.reveal('.slide-anim', {
-        duration: 3000,
-        origin: 'bottom',
-        reset: true
-      });
-      //animation for principal's Message and the founders meassage
-      sr.reveal('.pm-anim', {
-        duration: 1000,
-        origin: 'right',
-        distance: '300px',
-        viewFactor: 0.2,
-        reset: true
-      });
-      sr.reveal('.pimg-anim', {
-        duration: 1000,
-        origin: 'left',
-        distance: '300px',
-        reset: true
-      });
-      // putting the same animation to the same heading
-      sr.reveal('.head-anim', {
-        duration: 1000,
-        origin: 'bottom',
-        reset: true,
-        mobile: true,
-        reset: true,
-        viewFactor: 0.2
-      });
+  <script>
+    window.sr = ScrollReveal();
+    // ScrollReveal for the navigation bar
+    // animation for the whole navigation bar
+    sr.reveal('.navbar', {
+      duration: 1000,
+      origin: 'bottom',
+      mobile: true,
+      reset: true,
+      viewFactor: 0.2
+    });
+    // animating the component of the navigation bar each at a time using some delay
+    // animation for the home button
+    sr.reveal('.home-nav', {
+      duration: 700,
+      delay: 00,
+      distance: '300px',
+      origin: 'right',
+      reset: true,
+      mobile: true,
+      reset: true,
+      viewFactor: 0.2
+    });
+    // animation for the about us button
+    sr.reveal('.aboutus-anim', {
+      duration: 1500,
+      delay: 50,
+      distance: '300px',
+      origin: 'right',
+      mobile: true,
+      reset: true,
+      viewFactor: 0.2
+    });
+    //for the initiatives tab
+    sr.reveal('.init-anim', {
+      duration: 1500,
+      delay: 100,
+      distance: '300px',
+      origin: 'right',
+      mobile: true,
+      reset: true,
+      viewFactor: 0.2
+    });
+    //Events tab
+    sr.reveal('.events-anim', {
+      duration: 1500,
+      delay: 150,
+      distance: '300px',
+      origin: 'right',
+      mobile: true,
+      reset: true,
+      viewFactor: 0.2
+    });
+    //Contacts tab
+    sr.reveal('.con-anim', {
+      duration: 1500,
+      delay: 200,
+      distance: '300px',
+      origin: 'right',
+      mobile: true,
+      reset: true,
+      viewFactor: 0.2
+    });
+    // animation for the SLIDER
+    sr.reveal('.slide-anim', {
+      duration: 3000,
+      origin: 'bottom',
+      reset: true
+    });
+    //animation for principal's Message and the founders meassage
+    sr.reveal('.pm-anim', {
+      duration: 1000,
+      origin: 'right',
+      distance: '300px',
+      viewFactor: 0.2,
+      reset: true
+    });
+    sr.reveal('.pimg-anim', {
+      duration: 1000,
+      origin: 'left',
+      distance: '300px',
+      reset: true
+    });
+    // putting the same animation to the same heading
+    sr.reveal('.head-anim', {
+      duration: 1000,
+      origin: 'bottom',
+      reset: true,
+      mobile: true,
+      reset: true,
+      viewFactor: 0.2
+    });
 
-      sr.reveal('.showcase-btn', {
-        duration: 1500,
-        delay: 250,
-        origin: 'bottom',
-        reset: true,
-        mobile: true,
-        viewFactor: 0.2
-      });
-      sr.reveal('.quote', {
-        duration: 2000,
-        delay: 500,
-        origin: 'bottom',
-        reset: true
-      });
-    </script>
+    sr.reveal('.showcase-btn', {
+      duration: 1500,
+      delay: 250,
+      origin: 'bottom',
+      reset: true,
+      mobile: true,
+      viewFactor: 0.2
+    });
+    sr.reveal('.quote', {
+      duration: 2000,
+      delay: 500,
+      origin: 'bottom',
+      reset: true
+    });
+  </script>
 </body>
+
 </html>
