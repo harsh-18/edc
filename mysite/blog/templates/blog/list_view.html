@@ -153,11 +153,11 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-8">
+      <div class="col-7 ">
         <h5 id="font1">TOP POSTS</h5>
         <hr/> {% for object in object_list %}
         <ul class="list-unstyled">
-          <li class="media">
+          <li class="media mb-3">
             <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
             <div class="media-body">
               <h5 class="mt-0 mb-1"><a href="/blog/{{object.id}}">{{object.title}}</a></h5>
@@ -167,7 +167,7 @@
           </li>
         </ul>
         {% endfor %}
-         {% if qs.has_other_pages %}
+        <!-- {% if qs.has_other_pages %}
         <ul class="pagination">
           {% if qs.has_previous %}
           <li><a href="?page={{ qs.previous_page_number }}">&laquo;</a></li>
@@ -184,22 +184,26 @@
           <li class="disabled"><span>&raquo;</span></li>
           {% endif %}
         </ul>
-        {% endif %}
+        {% endif %} -->
 
       </div>
-      <div class="col-md-4">
+      <div class="col-5">
         <!-- RECENT POST -->
         <h5 id="font1" class="ml-5">RECENT POST</h5>
         <hr/>
 
-        <ul class="list-unstyled ml-5">
+        {% for object in object_list %}
+        <ul class="list-unstyled">
           <li class="media">
             <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
             <div class="media-body">
-              <h5 class="mt-0 mb-1">List-based media object</h5> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-              in faucibus.
+              <h5 class="mt-0 mb-1"><a href="/blog/{{object.id}}">{{object.title}}</a></h5>
+              <h6>{{ object.content|safe|truncatewords:"15"|linebreaks }}</h6>
+              <button class="btn" type="button" name="Read More"><a href="{{ url_for_full_content }}">Read more</a></button>
             </div>
           </li>
+        </ul>
+        {% endfor %}
 
           <button class="btn btn-info" type="button" name="See More">See More</button>
       </div>
@@ -245,16 +249,16 @@
           </div>
         </div>
       </div>
-      </div>
-      </div>
-      <div class="container-fluid pt-2 " id="footer-1">
-        <div class="row">
-          <p class="text-center container" style="color: white;">
-            Entrepreneurship Development Cell <br> Bharati Vidyapeeth University College of Engineering, Pune (INDIA)
-          </p>
-        </div>
-      </div>
-    </footer>
+  </div>
+  </div>
+  <div class="container-fluid pt-2 " id="footer-1">
+    <div class="row">
+      <p class="text-center container" style="color: white;">
+        Entrepreneurship Development Cell <br> Bharati Vidyapeeth University College of Engineering, Pune (INDIA)
+      </p>
+    </div>
+  </div>
+  </footer>
   <!-- starting the script for the scrolling page -->
 
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
