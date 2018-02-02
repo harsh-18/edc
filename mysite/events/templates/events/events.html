@@ -18,7 +18,7 @@
   <!-- scroll script cdn -->
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   <!-- stylesheet cdn -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
@@ -67,7 +67,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top " style="font-family:Poppins;">
 
-    <a class="navbar-brand" href="index.html"> <img src="img/edcpng.png" alt="Mountain View" style="width:120px;height:40px;">   </a>
+    <a class="navbar-brand" href="/"> <img src="{% static 'img/edcpng.png' %}" alt="Mountain View" style="width:120px;height:40px;">   </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -104,7 +104,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100 img-fluid" max-width="100%" height="auto" src="img/hslider.png" alt="First slide">
+        <img class="d-block w-100 img-fluid" max-width="100%" height="auto" src="{% static 'img/hslider.png' %}" alt="First slide">
       </div>
 
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -173,20 +173,20 @@
     <div class="container">
 
       <div class="row past_events mx-auto text-center ">
-        <div class="col-sm-3"><img src="img/nasscom.png" alt="..." class="img-thumbnail" style="width:250px;height:250px">
+        <div class="col-sm-3"><img src="{% static 'img/nasscom.png' %}" alt="..." class="img-thumbnail" style="width:250px;height:250px">
           <figcaption class="figure-caption text-center mt-3 " style="color:black;">NASSCOM</figcaption>
         </div>
 
 
-        <div class="col-sm-3"><img src="img/josh.png" alt="..." class="img-thumbnail" style="width:250px;height:250px">
+        <div class="col-sm-3"><img src="{% static 'img/josh.png' %}" alt="..." class="img-thumbnail" style="width:250px;height:250px">
           <figcaption class="figure-caption text-center mt-3" style="color:black;">JOSH TALKS</figcaption>
         </div>
 
-        <div class="col-sm-3"><img src="img/pocc.png" alt="..." class="img-thumbnail" style="width:250px;height:250px">
+        <div class="col-sm-3"><img src="{% static 'img/pocc.png' %}" alt="..." class="img-thumbnail" style="width:250px;height:250px">
           <figcaption class="figure-caption text-center mt-3" style="color:black;">POCC</figcaption>
         </div>
 
-        <div class="col-sm-3"><img src="img/gdg.png" alt="..." class="img-thumbnail" style="width:250px;height:250px">
+        <div class="col-sm-3"><img src="{% static 'img/gdg.png' %}" alt="..." class="img-thumbnail" style="width:250px;height:250px">
           <figcaption class="figure-caption text-center mt-3" style="color:black;">GDG</figcaption>
         </div>
 
@@ -206,17 +206,17 @@
 
 
       <div class="row mx-auto text-center " style="font-family:Poppins;">
-        <div class="col-sm-3"><a href="internstellar.html"><img src="img/intern.png" alt="..." class="img-thumbnail" style="width:250px;height:250px"></a>
-          <figcaption class="figure-caption text-center mt-3" ;><a href="internstellar.html" style="color:grey;">INTERNSTELLAR</a></figcaption>
+        <div class="col-sm-3"><a href="#"><img src="{% static 'img/intern.png' %}" alt="..." class="img-thumbnail" style="width:250px;height:250px"></a>
+          <figcaption class="figure-caption text-center mt-3" ;><a href="/events" style="color:grey;">INTERNSTELLAR</a></figcaption>
         </div>
-        <div class="col-sm-3"><a href="sec.html"><img src="img/sec.png" alt="..." class="img-thumbnail"style="width:250px;height:250px"></a>
-          <figcaption class="figure-caption text-center mt-3"><a href="sec.html" style="color:grey;">  SEC</a></figcaption>
+        <div class="col-sm-3"><a href="#"><img src="{% static 'img/sec.png' %}" alt="..." class="img-thumbnail"style="width:250px;height:250px"></a>
+          <figcaption class="figure-caption text-center mt-3"><a href="/events" style="color:grey;">  SEC</a></figcaption>
         </div>
-        <div class="col-sm-3"><a href="esummit.html"><img src="img/esummit2.png" alt="..." class="img-thumbnail"style="width:250px;height:250px"></a><br>
-          <figcaption class="figure-caption text-center mt-3"><a href="esummit.html" style="color:grey;">E-SUMMIT</a></figcaption>
+        <div class="col-sm-3"><a href="#"><img src="{% static 'img/esummit2.png' %}" alt="..." class="img-thumbnail"style="width:250px;height:250px"></a><br>
+          <figcaption class="figure-caption text-center mt-3"><a href="/events" style="color:grey;">E-SUMMIT</a></figcaption>
         </div>
-        <div class="col-sm-3"><a href="events.html"><img src="img/sconclave.png" alt="..." class="img-thumbnail"style="width:250px;height:250px"></a>
-          <figcaption class="figure-caption text-center mt-3"><a href="sec.html" style="color:grey;">STARTUP CONCLAVE</a></figcaption>
+        <div class="col-sm-3"><a href="#"><img src="{% static 'img/sconclave.png' %}" alt="..." class="img-thumbnail"style="width:250px;height:250px"></a>
+          <figcaption class="figure-caption text-center mt-3"><a href="/events" style="color:grey;">STARTUP CONCLAVE</a></figcaption>
 
         </div>
 
@@ -233,7 +233,7 @@
     <div class="container mb-3 ">
       <div class="row mt-3">
         <div class="col-md-3 col-xs-3 mt-4">
-          <a href="index.html"><img src="img/edc-white.png" height="40px" width="120px"  ></a><br><br>
+          <a href="/"><img src="{% static 'img/edc-white.png' %}" height="40px" width="120px"  ></a><br><br>
           <p style="color:white;"> Bhararti Vidyapeeth University,<br> College of Engineering,<br> Pune-411043.
           </p>
         </div>

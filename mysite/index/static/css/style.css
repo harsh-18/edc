@@ -56,7 +56,7 @@ footer {
 
   transform: translate3d(0, 0, 0);
 
-  background-image: url("img/collab1.png");
+  background-image: url("/static/img/collab1.png");
 }
 
 .tech-slideshow .mover-1 {
@@ -92,7 +92,8 @@ footer {
 }
 
 .hov:hover {
-    background: url(img/collab.png);
+
+    background: url("/static/img/collab.png");
 }
 
 
@@ -108,7 +109,7 @@ footer {
 .tech-slideshow > div {
   height: 200px;
   width: 2526px;
-  background-image: url("img/collab1.png");
+  background-image: url("/static/img/collab1.png");
   position: absolute;
   top: 0;
   left: 0;
