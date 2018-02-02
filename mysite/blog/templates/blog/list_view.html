@@ -121,7 +121,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top " style="font-family:Poppins;">
 
-    <a class="navbar-brand" href="index.html"> <img src="img/edcpng.png" alt="Mountain View" style="width:120px;height:40px;">   </a>
+    <a class="navbar-brand" href="index.html"> <img src="{% static 'img/edcpng.png' %}" alt="Mountain View" style="width:120px;height:40px;">   </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -153,12 +153,12 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-7 ">
+      <div class="col-8 ">
         <h5 id="font1">TOP POSTS</h5>
         <hr/> {% for object in object_list %}
         <ul class="list-unstyled">
           <li class="media mb-3">
-            <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
+            <img class="d-flex mr-3" src="{% static 'img/sample.svg' %}" alt="Generic placeholder image">
             <div class="media-body">
               <h5 class="mt-0 mb-1"><a href="/blog/{{object.id}}">{{object.title}}</a></h5>
               <h6>{{ object.content|safe|truncatewords:"50"|linebreaks }}</h6>
@@ -187,7 +187,7 @@
         {% endif %} -->
 
       </div>
-      <div class="col-5">
+      <div class="col-4">
         <!-- RECENT POST -->
         <h5 id="font1" class="ml-5">RECENT POST</h5>
         <hr/>
@@ -195,7 +195,7 @@
         {% for recent in recent_post_list %}
         <ul class="list-unstyled">
           <li class="media">
-            <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
+            <img class="d-flex mr-3" src="{% static 'img/sample.svg' %}" alt="Generic placeholder image">
             <div class="media-body">
               <h5 class="mt-0 mb-1"><a href="/blog/{{object.id}}">{{recent.title}}</a></h5>
               <h6>{{ recent.content|safe|truncatewords:"15"|linebreaks }}</h6>
@@ -204,8 +204,6 @@
           </li>
         </ul>
         {% endfor %}
-
-          <button class="btn btn-info" type="button" name="See More">See More</button>
       </div>
     </div>
 
@@ -214,7 +212,7 @@
       <div class="container mb-3 footer-0">
         <div class="row mt-3">
           <div class="col-md-3 col-xs-3 mt-4">
-            <a href="index.html"><img src="img/edc-white.png" height="40px" width="120px"  ></a><br><br>
+            <a href="index.html"><img src="{% static 'img/edc-white.png' %}" height="40px" width="120px"  ></a><br><br>
             <p style="color:white;"> Bhararti Vidyapeeth University,<br> College of Engineering,<br> Pune-411043.
             </p>
           </div>

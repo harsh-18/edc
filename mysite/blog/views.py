@@ -19,13 +19,24 @@ def post_model_list_view(request):
     qs = PostModel.objects.all() #query set
     recent_post = PostModel.objects.all().order_by('-timestamp')
     page = request.GET.get('page' , 1)
-    paginator = Paginator(qs, 2)
+    paginator = Paginator(qs, 4)
     try:
         qs = paginator.page(page)
     except PageNotAnInteger:
         qs = paginator.page(1)
     except EmptyPage:
         users = paginator.page(paginator.num_pages)
+
+
+
+    recent_page = request.GET.get('recent_page' , 1)
+    recent_paginator = Paginator(recent_post, 4)
+    try:
+        recent_post = recent_paginator.page(page)
+    except PageNotAnInteger:
+        recent_post = recent_paginator.page(1)
+    except EmptyPage:
+        users = recent_paginator.page(recent_paginator.num_pages)
 
     template_path="blog/list_view.html"
     context = {
