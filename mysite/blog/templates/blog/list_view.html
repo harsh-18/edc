@@ -192,13 +192,13 @@
         <h5 id="font1" class="ml-5">RECENT POST</h5>
         <hr/>
 
-        {% for object in object_list %}
+        {% for recent in recent_post_list %}
         <ul class="list-unstyled">
           <li class="media">
             <img class="d-flex mr-3" src="img/sample.svg" alt="Generic placeholder image">
             <div class="media-body">
-              <h5 class="mt-0 mb-1"><a href="/blog/{{object.id}}">{{object.title}}</a></h5>
-              <h6>{{ object.content|safe|truncatewords:"15"|linebreaks }}</h6>
+              <h5 class="mt-0 mb-1"><a href="/blog/{{object.id}}">{{recent.title}}</a></h5>
+              <h6>{{ recent.content|safe|truncatewords:"15"|linebreaks }}</h6>
               <button class="btn" type="button" name="Read More"><a href="{{ url_for_full_content }}">Read more</a></button>
             </div>
           </li>

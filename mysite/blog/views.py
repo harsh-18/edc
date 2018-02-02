@@ -17,7 +17,7 @@ def post_model_detail_view(request, id=None):
 
 def post_model_list_view(request):
     qs = PostModel.objects.all() #query set
-
+    recent_post = PostModel.objects.all().order_by('-timestamp')
     page = request.GET.get('page' , 1)
     paginator = Paginator(qs, 2)
     try:
@@ -29,13 +29,14 @@ def post_model_list_view(request):
 
     template_path="blog/list_view.html"
     context = {
-    "object_list": qs
+    "object_list": qs,
+    "recent_post_list" : recent_post
     }
     return render(request , template_path , context)
 
 
-def recent_post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    # sorted the posts according to published_date
-    return render(request, 'blog/post_list.html', {'posts': posts})
+# def recent_post_list(request):
+#     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+#     # sorted the posts according to published_date
+#     return render(request, 'blog/list_view.html', {'posts': posts})
     # render the blog posts with the page request
